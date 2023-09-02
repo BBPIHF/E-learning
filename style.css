@@ -3,13 +3,17 @@
   text-decoration: none;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
+:root{
+  --primary:rgb(6, 6, 134);
+}
+
 
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background-color: #e3e3e3;
+  background-color: #ebf5fd;
 }
 
 @keyframes scaleEffect {
@@ -23,12 +27,40 @@ body {
     transform: scale(1);
   }
 }
+
+.preloader{
+  position:fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ffff;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  visibility: visible;
+  z-index: 999;
+  transition: .3s linear;
+}
+
+.hide-preloader{
+  z-index: -999;
+  visibility: hidden;
+}
+
+.preloader img{
+  width: 200px;
+  height: 200px;
+}
+
+
+
 section {
   padding: 4rem 0;
 }
 
 #top {
-  z-index: 1000;
+  z-index: 100;
   position: fixed;
   background-color: white;
 }
@@ -36,26 +68,28 @@ section {
   text-decoration: none;
   margin-left: 1rem;
   font-weight: 700;
-  color: rgb(0, 0, 59);
+  color: rgb(8, 8, 112);
 }
 #top .nav .links a:hover {
   color: rgb(0, 132, 255);
   border-bottom: 3px solid rgb(24, 69, 214);
 }
 #top .nav .hamburger {
-  color: rgb(0, 0, 59);
+  color: rgb(6, 6, 134);
   display: none;
   font-size: 2rem;
 }
 
 .home {
   padding-top: 150px;
+
 }
+
 .home .col a {
   font-size: 1.2rem;
 }
 .home .col img {
-  height: 480px;
+  height: 400px;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -69,21 +103,29 @@ section {
 .home .col h1 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: rgb(0, 0, 59);
+  color: rgb(6, 6, 134);
+  line-height: 1.2;
 }
 .home .col h1 span {
   color: rgb(0, 132, 255);
 }
 .home .col i {
-  font-size: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  text-align: center;
+  line-height: 3rem;
   color: rgb(0, 132, 255);
   box-shadow: 0 0.3rem 1rem rgba(0, 38, 255, 0.5);
   animation: scaleEffect 2s infinite;
+  border-radius: 50%;
+  font-size: 2rem;
 }
 
+
+
 #about {
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
-          clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
   background-color: white;
 }
 #about .about .col img {
@@ -96,7 +138,7 @@ section {
 }
 #about .about .col h1 {
   font-weight: 700;
-  color: rgb(0, 0, 59);
+  color: rgb(6, 6, 134);
   line-height: 1.5;
 }
 #about .about .col h1 span {
@@ -108,18 +150,18 @@ section {
 #about .about .col span {
   font-size: 1rem;
   font-weight: 600;
-  color: rgb(0, 0, 59);
+  color: rgb(6, 6, 134);
 }
 #about .about .col .lifetime {
-  color: rgb(0, 0, 59);
+  color: rgb(6, 6, 134);
 }
 
 .courses > h1 {
-  color: rgb(0, 0, 59);
+  color: rgb(6, 6, 134);
 }
 .courses .box h1 {
   font-size: 1.5rem;
-  color: rgb(0, 0, 59);
+  color: rgb(6, 6, 134);
   padding-top: 1rem;
 }
 .courses .box i {
@@ -129,9 +171,11 @@ section {
   color: red;
   border-radius: 50%;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
-}
-.courses .box i:hover {
   background-color: white;
+}
+
+.courses .box i:hover {
+  background-color: #ebf5fd;
 }
 .courses .box:nth-child(2) i {
   border: 4px dotted rgb(255, 0, 106);
@@ -153,19 +197,24 @@ section {
 }
 #trainer .trainers > h1 {
   font-size: 2rem;
-  color: rgb(0, 0, 59);
+  color: rgb(6, 6, 134);
   font-weight: 700;
   position: relative;
   max-width: 40rem;
 }
 #trainer .trainers > p {
   max-width: 40rem;
-  color: rgb(0, 0, 59);
+  color: rgb(6, 6, 134);
 }
+
+#trainer .trainers .box .rounded-circle{
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.6);
+}
+
 #trainer .trainers .box {
   transform: translateX(-100%);
   opacity: 0;
-  transition: 0.5s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 #trainer .trainers .box.show {
   transform: translateX(0);
@@ -195,7 +244,7 @@ section {
 #trainer .trainers .box h1 {
   font-size: 1.2rem;
   font-weight: 600;
-  color: rgb(0, 0, 59);
+  color: rgb(6, 6, 134);
 }
 #trainer .trainers .box h1 span {
   font-size: 0.9rem;
@@ -210,7 +259,7 @@ section {
 }
 
 .review h1 {
-  color: rgb(0, 0, 59);
+  color: rgb(6, 6, 134);
 }
 .review .background {
   width: 10rem;
@@ -233,7 +282,7 @@ section {
   padding: 1rem 2rem;
 }
 .review .box-container .box-wrapper .jsreview .inner-wrapper {
-  background-color: rgb(0, 0, 59);
+  background-color: rgb(0,0,59);
   border: 1px solid hwb(184 4% 0%);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
   padding: 4rem;
@@ -273,7 +322,7 @@ section {
 .review .box-container .box p {
   font-size: 1rem;
   line-height: 1.5;
-  color: rgb(0, 132, 255);
+  color: rgb(97, 178, 253);
   max-width: 90%;
   position: relative;
 }
@@ -288,7 +337,7 @@ section {
   font-size: 1.5rem;
 }
 .review .fa-chevron-right:hover, .review .fa-chevron-left:hover {
-  color: rgb(0, 0, 59);
+  color: rgb(6, 6, 134);
 }
 
 .contact-container {
@@ -296,13 +345,13 @@ section {
   padding: 4rem;
 }
 .contact-container .contacts > h3 {
-  color: rgb(0, 0, 59);
+  color: rgb(6, 6, 134);
 }
 .contact-container .contacts .box {
   padding-top: 0.5rem;
 }
 .contact-container .contacts .box p {
-  color: rgb(0, 0, 59);
+  color: rgb(6, 6, 134);
   font-weight: 500;
 }
 .contact-container .contacts .box > i {
@@ -315,14 +364,14 @@ section {
   height: 2rem;
   text-align: center;
   line-height: 2;
-  background-color: rgb(0, 0, 59);
+  background-color: rgb(6, 6, 134);
   border-radius: 0.5rem;
 }
 .contact-container .contacts .box .social i:hover {
   opacity: 0.7;
 }
 .contact-container .contacts .box h3 {
-  color: rgb(0, 0, 59);
+  color: rgb(6, 6, 134);
 }
 .contact-container .form {
   background-color: rgb(0, 0, 59);
@@ -363,7 +412,7 @@ section {
   right: 2rem;
   width: 2rem;
   height: 2rem;
-  color: rgb(0, 0, 59);
+  color: rgb(6, 6, 134);
   background-color: rgb(0, 132, 255);
   text-align: center;
   line-height: 2rem;
@@ -382,6 +431,28 @@ section {
   #about .homepage2 {
     display: none;
   }
+
+  .home .col{
+    text-align: center;
+    }
+
+    .home .aboutimg{
+      justify-content: center;
+    }
+
+    #about .about .col h1{
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    #about .about .col p{
+      text-align: center;
+    }
+
+    #about .about .col .test{
+      margin: 0 auto;  
+    }
+
   #top .container .hamburger {
     display: block;
   }
@@ -414,6 +485,16 @@ section {
 }
 @media screen and (max-width: 450px) {
   html {
-    font-size: 11px;
+    font-size: 13px;
+  }
+  .home .col img {
+    height: 300px;
+    width: 100%;
+  }
+  .review .box-container .box-wrapper .jsreview .inner-wrapper {
+    width: 100%;
+  }
+  .home .col h1 {
+    line-height: 1;
   }
 }/*# sourceMappingURL=style.css.map */
