@@ -28,7 +28,7 @@ observer.observe(element);
 const review = [
     {
         img: "images/trainer5.jpg",
-        name: "Inaolaji Tope Michael",
+        name: "Inaolaji Tope",
         desc: "As an educator, I appreciate the flexibility and resources offered by this e-learning platform. It allows me to create dynamic lessons, connect with my students easily, and track their progress. It's made teaching a joy!"
 
     },
@@ -94,7 +94,7 @@ chevronRigth.addEventListener('click', ()=>{
             return;
         } 
         count++;
-        boxWrapper.style.transform = `translateX(-${count * 100}vw)`
+        boxWrapper.style.transform = `translateX(-${count * 101.5}vw)`
         console.log(count);
 
     
@@ -110,5 +110,12 @@ chevronLeft.addEventListener('click', ()=>{
         console.log(count);
         boxWrapper.style.transform = `translateX(-${count * 100}vw)`
 
+})
+
+
+const preloader = document.querySelector(".preloader");
+
+window.addEventListener("load", function(){
+  preloader.classList.add("hide-preloader");
 })
 
