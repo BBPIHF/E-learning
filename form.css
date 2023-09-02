@@ -1,0 +1,397 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,600&display=swap');
+
+*, 
+*::before,
+ *::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primaryColor: #146C94;
+    --secondaryColor: #0F132E;
+    --tertiaryColor: #B0DAFF;
+    --greyColor: #4e4d4d;
+    --hoverColor:  rgb(96, 77, 219);
+    transition: .8s ease-in-out;
+}
+
+
+body, input{
+    font-family: 'Poppins', sans-serif;
+}
+
+main{
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    background-color: var(--primaryColor);
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box{
+    position: relative;
+    width: 100%;
+    max-width: 1020px;
+    height: 600px;
+    background: #fff;
+    border-radius: 3.3rem;
+    box-shadow: 0 60px 40px -30px rgba(0, 0, 0, 0.6);
+}
+
+.inner-box{
+    position:absolute;
+    width: calc(100% - 4.1rem);
+    height: calc(100% - 4.1rem);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.forms-wrap{
+    position: absolute;
+    height: 100%;
+    width: 45%;
+    top: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    transition: 0.8s;
+}
+
+
+
+
+/* ----------------swap carousel and forms------------- */
+main.active .forms-wrap{
+    left:55%;
+}
+
+main.active .carousel{
+    left:0;
+}
+
+main.active .sign-up-form{
+    opacity: 1;
+    pointer-events: all;
+}
+
+main.active .sign-in-form{
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+
+form{
+    max-width: 260px;
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap:50px;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    padding-top: 2rem; 
+}
+
+form.sign-up-form{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo img{
+    width: 6rem;
+}
+
+.logo h3{
+    font-size: 1rem;
+    line-height: 1rem;
+    color:var(--secondaryColor);
+}
+
+.heading h2{
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--secondaryColor);
+}
+
+.heading h6{
+    color: var(--greyColor);
+    font-weight: 400;
+    font-size: .8rem;
+    display: inline;
+
+}
+
+.toggle{
+    color: var(--secondaryColor);
+    text-decoration: none;
+    font-size: .8rem;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.toggle:hover{
+    color: var(--hoverColor);
+}
+
+.input-wrap{
+    position: relative;
+    height: 37px;
+    margin-bottom: 1.5rem;
+}
+
+.input-field{
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    background: none;
+    border: none;
+    outline:none;
+    border-bottom: 1px solid var(--greyColor);
+    transition: .4s;
+    font-size: .8rem;
+}
+
+label{
+    font-size: .8rem;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    transition: .4s;
+}
+
+.input-field.active{
+    border-bottom-color: #151111;
+}
+
+.input-field.active + label{
+    font-size:.75rem;
+    top: -2px;
+}
+
+.sign-btn{
+    display: inline-block;
+    width: 100%;
+    height: 43px;
+    background-color: var(--secondaryColor);
+    color: #fff;
+    cursor: pointer;
+    border-radius: 0.8rem;
+    font-size: .8rem;
+    margin-bottom: 1.5rem;
+    transition: .4s ease-in-out;
+}
+
+.sign-btn:hover{
+    background-color: var(--hoverColor)
+}
+
+.text{
+    color: var(--greyColor);
+    font-size: .8rem;
+}
+
+.text a:hover{
+    color: var(--hoverColor);
+}
+
+
+.carousel{
+    position: absolute;
+    height: 100%;
+    width: 55%;
+    left: 45%;
+    top: 0;
+    background-color: var(--tertiaryColor);
+    border-radius: 2rem;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    padding-bottom: 2rem;
+    transition: 0.8s;
+}
+
+.images-wrapper{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    overflow: hidden;
+}
+
+.image{
+    width: 100%;
+    height:400px;
+    object-fit: cover;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    opacity: 0;
+    transition: .4s ease-in-out;
+}
+
+.img-1{
+    transform: translate(0, -400px);
+}
+
+.img-2{
+    transform: scale(0.5);
+}
+
+.img-3{
+    transform: translateX(-100%);
+}
+
+.image.show{
+    opacity: 1;
+    transform: none;
+}
+
+.text-slider{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.text-wrap{
+    max-height: 2.2rem;
+    overflow: hidden;
+    margin: 2rem 0;
+}
+
+
+
+.text-group{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    transition: .4s ease-in-out;
+    transform: translateY(0);
+}
+
+.text-group h2{
+    line-height: 2.2rem;
+    font-weight: 600;
+    font-size: 1.6rem;
+}
+
+.bullets{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bullets span{
+    display: block;
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: var(--greyColor);
+    margin: 0 0.25rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.bullets span.active{
+    width: 1.1rem;
+    background-color: var(--secondaryColor);
+    border-radius: 1rem;
+}
+
+
+
+
+@media (max-width: 850px){
+    .box{
+        height: auto;
+        max-width: 500px;
+        overflow: hidden;
+    }
+
+    .inner-box{
+        position: static;
+        transform: none;
+        width: revert;
+        height: revert;
+        padding: 2rem;
+    }
+
+    .forms-wrap{
+        position: revert;
+        width: 100%;
+        height: auto;
+    }
+
+    form{
+        max-width: revert;
+        height: auto;
+    }
+
+    .carousel{
+        position: revert;
+        height: auto;
+        width: 100%;
+        padding-bottom:.8rem;
+        display: flex;
+        margin-top: 1rem;
+    }
+
+    .images-wrapper{
+        display: none;
+    }
+
+    .text-group h2{
+        font-size: 1rem;
+    }
+
+    .text-wrap{
+        margin-bottom: .8rem;
+    }
+
+    .text-slider{
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 500px){
+    main{
+        background-color: #fff;
+        padding: 0px;
+    }
+    .carousel{
+       border-radius: 1rem;
+    }
+    .box{
+        box-shadow: none;
+    }
+
+/* ----------------swap carousel and forms------------- */
+
+
+main .sign-up-form{
+    transform: translateX(-200%);
+    transition: 1s;
+}
+
+main.active .sign-up-form{
+    transform: none;
+}
+
+
+
+    
+}

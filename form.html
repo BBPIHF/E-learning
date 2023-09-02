@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in & Sign up form</title>
+    <link rel="stylesheet" href="form.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+</head>
+<body>
+    
+
+    <main>
+        <div class="box">
+            <div class="inner-box">
+                <div class="forms-wrap">
+                    <form action="form.html" class="sign-in-form">
+                        <div class="logo">
+                            <a href="index.html"><img src="images/logo.png" alt="logo image"></a> 
+                         </div>
+
+                        <div class="heading">
+                            <h2>Welcome Back</h2>
+                            <h6>Not registered yet?</h6>
+                            <a href="#" class="toggle sign-up">Sign Up</a>
+                        </div>
+
+                        <div class="actual-form">
+                            <div class="input-wrap">
+                                <input type="text" minlength="4" class="input-field" id="name" required/>
+                                <label for="name">Name</label>
+                            </div>
+
+                            <div class="input-wrap">
+                                <input type="password" minlength="4" class="input-field" id="pass" required/>
+                                <label for="pass">Password</label>
+                            </div>
+
+                            <input type="submit" value="Sign in" class="sign-btn"/>
+                            <p class="text">
+                                Forgotten your password or your login details?
+                                <a href="#">Get help</a> signing in
+                            </p>
+                        </div>
+                    </form>
+                    <form action="form.html" id="sign-up" class="sign-up-form">
+                        <div class="logo">
+                           <a href="index.html"><img src="images/logo.png" alt="logo image"></a> 
+                        </div>
+
+                        <div class="heading">
+                            <h2>Get Started</h2>
+                            <h6>Already have an account?</h6>
+                            <a href="#" class="toggle sign-in">Sign in</a>
+                        </div>
+
+                        <div class="actual-form">
+                            <div class="input-wrap">
+                                <input type="text" minlength="4" class="input-field" id="name" required/>
+                                <label for="name">Name</label>
+                            </div>
+
+                            <div class="input-wrap">
+                                <input type="email" minlength="4" class="input-field" id="name" required/>
+                                <label for="email">Email</label>
+                            </div>
+
+
+                            <div class="input-wrap">
+                                <input type="password" minlength="4" class="input-field" id="pass" required/>
+                                <label for="pass">Password</label>
+                            </div>
+
+                            <input type="submit" value="Sign up" class="sign-btn"/>
+                            <p class="text">
+                                By signing up, I agree to the <a href="#">Terms of Services</a> and <a href="#">Privacy Policy</a>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="carousel">
+                    <div class="images-wrapper">
+                        <img src="form-images/logo4.jpg" class="image img-1 show" alt=""/>
+                        <img src="form-images/logo2.png" class="image img-2" alt=""/>
+                        <img src="form-images/logo3.png" class="image img-3" alt=""/>
+                    </div>
+
+                    <div class="text-slider">
+                        <div class="text-wrap">
+                            <div class="text-group">
+                                <h2>Education without boundaries</h2>
+                                <h2>Unlock doors of knowledge</h2>
+                                <h2>Embrace the future of learning</h2>
+                            </div>
+                        </div>
+
+                        <div class="bullets">
+                            <span class="active" data-value="1"></span>
+                            <span data-value="2"></span>
+                            <span data-value="3"></span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+<!------------------JavaScript code here ----------------->
+    <script src="form.js"></script>
+</body>
+</html>
