@@ -491,4 +491,10 @@ section {
     height: 300px;
     width: 100%;
   }
+  .review .box-container .box-wrapper .jsreview .inner-wrapper {
+    width: 100%;
+  }
+  .home .col h1 {
+    line-height: 1;
+  }
 }/*# sourceMappingURL=style.css.map */
