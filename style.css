@@ -1,7 +1,8 @@
 * {
   box-sizing: border-box;
   text-decoration: none;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.5s;
 }
 :root{
   --primary:rgb(6, 6, 134);
@@ -81,8 +82,11 @@ section {
 }
 
 .home {
-  padding-top: 150px;
-
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
 }
 
 .home .col a {
@@ -466,9 +470,13 @@ section {
   #top .container .nav .links a {
     display: block;
     padding: 1rem;
-    background-color: #e3e3e3;
+    /* background-color: #e3e3e3; */
+    border-bottom: 1px solid grey;
     margin: 1rem;
-    border-radius: 0.5rem;
+    /* border-radius: 0.5rem; */
+  }
+  #top .container .nav .links a:hover{
+    padding-left: 30px;
   }
   #top .container .nav .links.show {
     display: block;
